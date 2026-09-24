@@ -1,0 +1,5 @@
+C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/CMakeFiles/TravlrAdmin.dir
+C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/CMakeFiles/edit_cache.dir
+C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/CMakeFiles/rebuild_cache.dir
+C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/CMakeFiles/TravlrAdmin_autogen_timestamp_deps.dir
+C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/CMakeFiles/TravlrAdmin_autogen.dir

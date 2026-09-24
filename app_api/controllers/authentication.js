@@ -31,7 +31,7 @@ const register = async(req, res) => {
         const token = user.generateJWT();
         return res
             .status(200)
-            .json(token);
+            .json({token});
     }
 };
 
@@ -52,6 +52,7 @@ passport.authenticate('local', (err, user, info) => {
             .json(err);
 }
 
+
 if (user) { // Auth succeeded - generate JWT and return to caller
     const token = user.generateJWT();
     res
@@ -62,8 +63,11 @@ if (user) { // Auth succeeded - generate JWT and return to caller
         .status(401)
         .json(info);
     }
-    })(req, res);
+})(req, res);
+
 };
+
+
 
 module.exports = {
     register,

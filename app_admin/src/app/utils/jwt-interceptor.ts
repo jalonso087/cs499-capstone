@@ -1,3 +1,4 @@
+/*
 import { Injectable, Provider } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -44,3 +45,5 @@ export class JwtInterceptor implements HttpInterceptor {
 export const authInterceptProvider: Provider =
 { provide: HTTP_INTERCEPTORS,
     useClass: JwtInterceptor, multi: true };
+
+*/

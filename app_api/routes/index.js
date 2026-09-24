@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const jwt = require('jsonwebtoken'); // Enable JSON Web Tokens
+//REMOVAL const jwt = require('jsonwebtoken');
 
 const tripsController = require("../controllers/trips");
 const authController = require("../controllers/authentication");
 
+/*
 // Method to authenticate our JWT
 function authenticateJWT(req, res, next) {
     // console.log('In Middleware');
@@ -48,7 +49,7 @@ verified) => {
     });
     next(); // We need to continue or this will hang forever
 }
-
+*/
 
 router.route("/register").post(authController.register);
 router.route("/login").post(authController.login);
@@ -56,7 +57,7 @@ router.route("/login").post(authController.login);
 router
     .route('/trips')
     .get(tripsController.tripsList) //GET method routes tripList
-    .post(authenticateJWT, tripsController.tripsAddTrip);
+    .post(tripsController.tripsAddTrip);
 
 
 
@@ -64,7 +65,7 @@ router
 router
     .route("/trips/:tripCode")
     .get(tripsController.tripsFindByCode)
-    .put(authenticateJWT, tripsController.tripsUpdateTrip);
+    .put(tripsController.tripsUpdateTrip);
 
 // define route for login endpoint
 router

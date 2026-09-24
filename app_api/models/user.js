@@ -34,6 +34,7 @@ userSchema.methods.validPassword = function(password) {
 };
 
 // Method to generate a JSON Web Token for the current record
+
 userSchema.methods.generateJWT = function() {
     return jwt.sign(
     { // Payload for our JSON Web Token
@@ -44,6 +45,7 @@ userSchema.methods.generateJWT = function() {
     process.env.JWT_SECRET, //SECRET stored in .env file
     { expiresIn: '1h' }) //Token expires an hour from creation
 };
+
 
 const User = mongoose.model('users', userSchema);
 module.exports = User;
