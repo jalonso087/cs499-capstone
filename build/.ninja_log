@@ -1,0 +1,13 @@
+# ninja log v6
+8	453	8119149266498955	TravlrAdmin_autogen/timestamp	65bd9844bea87e31
+8	453	8119149266498955	TravlrAdmin_autogen/mocs_compilation.cpp	65bd9844bea87e31
+8	453	8119149266498955	C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/timestamp	65bd9844bea87e31
+8	453	8119149266498955	C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/mocs_compilation.cpp	65bd9844bea87e31
+460	1844	8119149266858994	CMakeFiles/TravlrAdmin.dir/TravlrAdmin_autogen/mocs_compilation.cpp.obj	608ddc9522a23052
+467	2085	8119149266929391	CMakeFiles/TravlrAdmin.dir/mainwindow.cpp.obj	314bf5277a873117
+18	102	8119149398626657	TravlrAdmin_autogen/timestamp	65bd9844bea87e31
+18	102	8119149398626657	TravlrAdmin_autogen/mocs_compilation.cpp	65bd9844bea87e31
+18	102	8119149398626657	C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/timestamp	65bd9844bea87e31
+18	102	8119149398626657	C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/mocs_compilation.cpp	65bd9844bea87e31
+102	1382	8119149399461847	CMakeFiles/TravlrAdmin.dir/main.cpp.obj	58883bf871b860a9
+1407	1815	8119149412512563	TravlrAdmin.exe	9ac7cf3078f8fb6d

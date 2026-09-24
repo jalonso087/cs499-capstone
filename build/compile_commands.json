@@ -1,20 +1,20 @@
 [
 {
-  "directory": "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\TravlrAdmin.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TravlrAdmin.dir\\TravlrAdmin_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\DLX_A\\Downloads\\cs465-fullstack-module7\\cs465-fullstack-module7\\travlr\\build\\TravlrAdmin_autogen\\mocs_compilation.cpp",
-  "file": "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/TravlrAdmin_autogen/mocs_compilation.cpp",
-  "output": "CMakeFiles/TravlrAdmin.dir/TravlrAdmin_autogen/mocs_compilation.cpp.obj"
+  "directory": "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build",
+  "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/include -isystem C:/Qt/6.11.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.11.2/mingw_64/include -isystem C:/Qt/6.11.2/mingw_64/include/QtCore -isystem C:/Qt/6.11.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.11.2/mingw_64/include/QtGui -isystem C:/Qt/6.11.2/mingw_64/include/QtNetwork -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g -std=gnu++17 -o CMakeFiles\\TravlrAdmin.dir\\TravlrAdmin_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\DLX_A\\Documents\\vscodeprojects\\travlr\\build\\TravlrAdmin_autogen\\mocs_compilation.cpp",
+  "file": "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/mocs_compilation.cpp",
+  "output": "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/CMakeFiles/TravlrAdmin.dir/TravlrAdmin_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\TravlrAdmin.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TravlrAdmin.dir\\main.cpp.obj -c C:\\Users\\DLX_A\\Downloads\\cs465-fullstack-module7\\cs465-fullstack-module7\\travlr\\cpp_desktop_app\\main.cpp",
-  "file": "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/cpp_desktop_app/main.cpp",
-  "output": "CMakeFiles/TravlrAdmin.dir/main.cpp.obj"
+  "directory": "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build",
+  "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/include -isystem C:/Qt/6.11.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.11.2/mingw_64/include -isystem C:/Qt/6.11.2/mingw_64/include/QtCore -isystem C:/Qt/6.11.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.11.2/mingw_64/include/QtGui -isystem C:/Qt/6.11.2/mingw_64/include/QtNetwork -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g -std=gnu++17 -o CMakeFiles\\TravlrAdmin.dir\\main.cpp.obj -c C:\\Users\\DLX_A\\Documents\\vscodeprojects\\travlr\\cpp_desktop_app\\main.cpp",
+  "file": "C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/main.cpp",
+  "output": "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/CMakeFiles/TravlrAdmin.dir/main.cpp.obj"
 },
 {
-  "directory": "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\TravlrAdmin.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TravlrAdmin.dir\\mainwindow.cpp.obj -c C:\\Users\\DLX_A\\Downloads\\cs465-fullstack-module7\\cs465-fullstack-module7\\travlr\\cpp_desktop_app\\mainwindow.cpp",
-  "file": "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/cpp_desktop_app/mainwindow.cpp",
-  "output": "CMakeFiles/TravlrAdmin.dir/mainwindow.cpp.obj"
+  "directory": "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build",
+  "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -IC:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/include -isystem C:/Qt/6.11.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.11.2/mingw_64/include -isystem C:/Qt/6.11.2/mingw_64/include/QtCore -isystem C:/Qt/6.11.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.11.2/mingw_64/include/QtGui -isystem C:/Qt/6.11.2/mingw_64/include/QtNetwork -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g -std=gnu++17 -o CMakeFiles\\TravlrAdmin.dir\\mainwindow.cpp.obj -c C:\\Users\\DLX_A\\Documents\\vscodeprojects\\travlr\\cpp_desktop_app\\mainwindow.cpp",
+  "file": "C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/mainwindow.cpp",
+  "output": "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/CMakeFiles/TravlrAdmin.dir/mainwindow.cpp.obj"
 }
 ]

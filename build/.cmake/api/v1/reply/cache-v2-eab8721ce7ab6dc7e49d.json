@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/addr2line.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/addr2line.exe"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -31,7 +31,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/ar.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/ar.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build"
+			"value" : "c:/Users/DLX_A/Documents/vscodeprojects/travlr/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -92,22 +92,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "3"
-		},
-		{
-			"name" : "CMAKE_COLOR_MAKEFILE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Enable/Disable color output during build."
-				}
-			],
-			"type" : "BOOL",
-			"value" : "ON"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -155,11 +139,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Full path to the compiler used for language <LANG>. Set by CMake during compiler detection on the first configure; users may override on the command line to select a specific toolchain."
+					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/g++.exe"
+			"type" : "STRING",
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/g++.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -175,7 +159,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/gcc-ar.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -191,7 +175,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/gcc-ranlib.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -223,7 +207,19 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-g"
+			"value" : "-DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_DEBUG_INIT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Toolchain-file hook initializing CMAKE_<LANG>_FLAGS_<CONFIG> the first time the build tree is configured for language <LANG>. Intended for toolchain or platform files."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_MINSIZEREL",
@@ -271,7 +267,19 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-O2 -g -DNDEBUG"
+			"value" : "-DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -O2 -g -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_RELWITHDEBINFO_INIT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Toolchain-file hook initializing CMAKE_<LANG>_FLAGS_<CONFIG> the first time the build tree is configured for language <LANG>. Intended for toolchain or platform files."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_STANDARD_LIBRARIES",
@@ -299,7 +307,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/gcc.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/gcc.exe"
 		},
 		{
 			"name" : "CMAKE_DIAGNOSTIC_INIT",
@@ -327,7 +335,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/dlltool.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/dlltool.exe"
 		},
 		{
 			"name" : "CMAKE_EDIT_COMMAND",
@@ -446,6 +454,22 @@
 			"value" : ""
 		},
 		{
+			"name" : "CMAKE_EXPORT_BUILD_DATABASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable/Disable output of build database during the build."
+				}
+			],
+			"type" : "BOOL",
+			"value" : ""
+		},
+		{
 			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
 			"properties" : 
 			[
@@ -479,7 +503,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -491,7 +515,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "MinGW Makefiles"
+			"value" : "Ninja"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_INSTANCE",
@@ -563,7 +587,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/cpp_desktop_app"
+			"value" : "C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -847,7 +871,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/ld.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/ld.exe"
 		},
 		{
 			"name" : "CMAKE_LIST_FILE_NAME",
@@ -871,11 +895,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Path to a program."
+					"value" : "Program used to build from build.ninja files."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/mingw32-make.exe"
+			"value" : "C:/Qt/Tools/Ninja/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -971,7 +995,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/nm.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/nm.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -999,7 +1023,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/objcopy.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/objcopy.exe"
 		},
 		{
 			"name" : "CMAKE_OBJDUMP",
@@ -1015,7 +1039,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/objdump.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -1163,7 +1187,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/ranlib.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER",
@@ -1179,7 +1203,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/windres.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/windres.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -1287,7 +1311,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/readelf.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/readelf.exe"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -1507,7 +1531,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/strip.exe"
+			"value" : "C:/Qt/Tools/mingw1310_64/bin/strip.exe"
 		},
 		{
 			"name" : "CMAKE_TAPI",
@@ -1524,6 +1548,18 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "CMAKE_TAPI-NOTFOUND"
+		},
+		{
+			"name" : "CMAKE_TOOLCHAIN_FILE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The CMake toolchain file"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6/qt.toolchain.cmake"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -6966,6 +7002,30 @@
 			"value" : "OFF"
 		},
 		{
+			"name" : "QT_QMAKE_TARGET_MKSPEC",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "STRING",
+			"value" : "win32-g++"
+		},
+		{
+			"name" : "QT_QML_GENERATE_QMLLS_INI",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "STRING",
+			"value" : "ON"
+		},
+		{
 			"name" : "Qt6CoreTools_DIR",
 			"properties" : 
 			[
@@ -7083,7 +7143,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build"
+			"value" : "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build"
 		},
 		{
 			"name" : "TravlrAdmin_IS_TOP_LEVEL",
@@ -7107,7 +7167,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/cpp_desktop_app"
+			"value" : "C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app"
 		},
 		{
 			"name" : "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE",

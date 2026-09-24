@@ -187,7 +187,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17"
+					"fragment" : "-DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g -std=gnu++17"
 				}
 			],
 			"defines" : 
@@ -241,7 +241,7 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/TravlrAdmin_autogen/include"
+					"path" : "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/include"
 				},
 				{
 					"backtrace" : 2,
@@ -295,11 +295,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "TravlrAdmin_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "TravlrAdmin_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "TravlrAdmin_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "TravlrAdmin::@6890427a1f51a3e7e1df",
@@ -308,7 +308,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g",
 				"role" : "flags"
 			},
 			{
@@ -395,11 +395,11 @@
 			"id" : "Qt6::uic::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "TravlrAdmin_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "TravlrAdmin_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "TravlrAdmin_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 
@@ -450,7 +450,7 @@
 			],
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/TravlrAdmin_autogen/mocs_compilation.cpp",
+			"path" : "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -489,7 +489,7 @@
 				0
 			],
 			"isGenerated" : true,
-			"path" : "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/TravlrAdmin_autogen/timestamp",
+			"path" : "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/timestamp",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -499,7 +499,7 @@
 				0
 			],
 			"isGenerated" : true,
-			"path" : "C:/Users/DLX_A/Downloads/cs465-fullstack-module7/cs465-fullstack-module7/travlr/build/TravlrAdmin_autogen/timestamp.rule",
+			"path" : "C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/timestamp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],
