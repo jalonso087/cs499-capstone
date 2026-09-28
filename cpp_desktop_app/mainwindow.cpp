@@ -22,21 +22,51 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     
     //build page for trip listing view
     tripListingPage = new QWidget();
-    //QVBoxLayout *listingLayout = new QVBoxLayout(tripListingPage);
-    listingLayout = new QVBoxLayout(tripListingPage);
+    QVBoxLayout *listingLayout = new QVBoxLayout(tripListingPage);
 
-    //adding the navigation button to the trip listing page
+    //init filter UI
+    minPriceField = new QLineEdit(this);
+    minPriceField->setPlaceholderText("Min Price");
+
+    maxPriceField = new QLineEdit(this);
+    maxPriceField->setPlaceholderText("Max Price");
+
+    //instantiate filter button
+    filterButton = new QPushButton("Apply Filter", this);
+
+    //add to horizontal layout similar to a toolbar
+    QHBoxLayout *filterLayout = new QHBoxLayout();
+    filterLayout->addWidget(new QLabel("Filter by Price: $"));
+    filterLayout->addWidget(minPriceField);
+    filterLayout->addWidget(new QLabel(" to $"));
+    filterLayout->addWidget(maxPriceField);
+    filterLayout->addWidget(filterButton);
+
+    //add toolbar to listing layout
+    listingLayout->addLayout(filterLayout);
+
+    //connect button
+    connect(filterButton, &QPushButton::clicked, this, &MainWindow::applyPriceFilter);
+    
+    //add nav button to trip listing page
     QPushButton *navToAddButton = new QPushButton("Add New Trip", this);
     listingLayout->addWidget(navToAddButton);
+    
+    //listingLayout = new QVBoxLayout(tripListingPage);
+
+    /*adding the navigation button to the trip listing page
+    QPushButton *navToAddButton = new QPushButton("Add New Trip", this);
+    listingLayout->addWidget(navToAddButton);*/
 
     //adding logout button
     logoutButton = new QPushButton("Logout", this);
     listingLayout->addWidget(logoutButton);
     connect(logoutButton, &QPushButton::clicked, this, &MainWindow::logout);
 
+    //Commenting out as part of debugging
     //API Test button to fetch trips from the database
-    fetchButton = new QPushButton("Test API Connection", this);
-    listingLayout->addWidget(fetchButton);
+    //fetchButton = new QPushButton("Test API Connection", this);
+    //listingLayout->addWidget(fetchButton);
     
     //insert existing QScrollArea code here
 
@@ -104,7 +134,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     //network management
     networkManager = new QNetworkAccessManager(this);
-    connect(fetchButton, &QPushButton::clicked, this, &MainWindow::fetchTrips);
+    //connect(fetchButton, &QPushButton::clicked, this, &MainWindow::fetchTrips);
     connect(saveTripButton, &QPushButton::clicked, this, &MainWindow::submitNewTrip);
 }
 
@@ -227,94 +257,32 @@ void MainWindow::loadTripImage(const QString& imageName, QLabel* imageLabel) {
 }
 
 void MainWindow::onNetworkReply(QNetworkReply *reply) {
-    if(reply->error() == QNetworkReply::NoError) {
-        // Successful response
-        //parse the JSON response into an array
-        QJsonDocument jsonResponse = QJsonDocument::fromJson(reply->readAll());
+    if (reply->error() == QNetworkReply::NoError) {
+        QByteArray responseData = reply->readAll();
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
         QJsonArray jsonArray = jsonResponse.array();
 
-        //Create a container to hold cards vertically
-        QWidget *listContainer = new QWidget();
-        QVBoxLayout *listLayout = new QVBoxLayout(listContainer);
+        //clearing the tree before reloading to prevent duplicates
+        tripTree.clear();
 
-        //Loop through the database records
-        for(const QJsonValue &value : jsonArray) {
-            QJsonObject trip = value.toObject();
+        QList<QJsonObject> initialTrips;
 
-            //Create a card for each trip
-            QFrame *card = new QFrame();
-            card->setFrameShape(QFrame::StyledPanel);
-            card->setStyleSheet("QFrame { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px; margin: 5px; }");
-            QVBoxLayout *cardLayout = new QVBoxLayout(card);
+        //populate the BST and initial list
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject tripObj = value.toObject();
 
-            //placeholder images
-            QLabel *imagePlaceholder = new QLabel("Loading image...");
-            imagePlaceholder->setAlignment(Qt::AlignCenter);
+            //pull price string and convert to double
+            QString priceString = tripObj["perPerson"].toString();
+            double price = priceString.toDouble();
 
-            //start the download for this card's image
-            loadTripImage(trip["image"].toString(), imagePlaceholder);
+            tripTree.insert(price, tripObj);
 
-            //Title
-            QLabel *title = new QLabel(trip["name"].toString());
-            QFont titleFont = title->font();
-            titleFont.setBold(true);
-            titleFont.setPointSize(12);
-            title->setFont(titleFont);
-
-            //Resort and Stars
-            QLabel *resort = new QLabel(trip["resort"].toString());
-            resort->setStyleSheet("color: gray;");
-
-            //Price
-            QLabel *price = new QLabel("Price: $" + trip["perPerson"].toString());
-
-            //Length
-            QLabel *length = new QLabel("Length: " + trip["length"].toString());
-
-            //Description
-            QLabel *description = new QLabel("Description: " + trip["description"].toString());
-            description->setTextFormat(Qt::RichText);
-            description->setWordWrap(true);
-
-            //build the cards
-            cardLayout->addWidget(imagePlaceholder);
-            cardLayout->addWidget(title);
-            cardLayout->addWidget(resort);
-            cardLayout->addWidget(price);
-            cardLayout->addWidget(length);
-            cardLayout->addWidget(description);
-            
-            //add edit button
-            QPushButton *editButton = new QPushButton("Edit Trip");
-            cardLayout->addWidget(editButton);
-
-            //connect edit button to open form and pass the trip data for editing
-            connect(editButton, &QPushButton::clicked, this, [this, trip]() {
-                openEditForm(trip);
-            });
-
-            //add card to list
-            listLayout->addWidget(card);
+            initialTrips.append(tripObj);
         }
 
-        //Creating scroll area to allow scrolling through the cards
-        QScrollArea *scrollArea = new QScrollArea;
-        scrollArea->setWidgetResizable(true);
-        scrollArea->setWidget(listContainer);
-
-        //clear the previous layout and add the new scroll area with cards
-        QLayoutItem *existingItem = listingLayout->itemAt(2);
-        if(existingItem != nullptr) {
-            delete existingItem->widget();
-        }
-
-        //add scroll area to existing layout
-        listingLayout->addWidget(scrollArea);
-    } else {
-        // Handle error
-        logConsole->append("Error: " + reply->errorString());
+        //render UI with all trips initially
+        renderTripCards(initialTrips);
     }
-    // this will prevent memory leaks by deleting the reply object after processing
     reply->deleteLater();
 }
 
@@ -386,4 +354,87 @@ void MainWindow::openEditForm(const QJsonObject &tripData) {
 
     //switch screen to the form
     stackedWidget->setCurrentWidget(addTripPage);
+}
+
+void MainWindow::renderTripCards(const QList<QJsonObject>& trips) {
+    
+    //vertical card container
+    QWidget *listContainer = new QWidget();
+    QVBoxLayout *listLayout = new QVBoxLayout(listContainer);
+
+    //loop through trips
+    for (const QJsonObject &trip : trips) {
+        QFrame *card = new QFrame();
+        card->setFrameShape(QFrame::StyledPanel);
+        card->setStyleSheet("QFrame { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px; margin: 5px; }");
+        QVBoxLayout *cardLayout = new QVBoxLayout(card);
+
+        QLabel *imagePlaceholder = new QLabel("Loading image...");
+        imagePlaceholder->setAlignment(Qt::AlignCenter);
+        loadTripImage(trip["image"].toString(), imagePlaceholder);
+
+        QLabel *title = new QLabel(trip["name"].toString());
+        QFont titleFont = title->font();
+        titleFont.setBold(true);
+        titleFont.setPointSize(12);
+        title->setFont(titleFont);
+
+        QLabel *resort = new QLabel(trip["resort"].toString());
+        resort->setStyleSheet("color: gray;");
+
+        QLabel *price = new QLabel("Price: $" + trip["perPerson"].toString());
+        QLabel *length = new QLabel("Length: " + trip["length"].toString());
+        
+        QLabel *description = new QLabel("Description: " + trip["description"].toString());
+        description->setTextFormat(Qt::RichText);
+        description->setWordWrap(true);
+
+        cardLayout->addWidget(imagePlaceholder);
+        cardLayout->addWidget(title);
+        cardLayout->addWidget(resort);
+        cardLayout->addWidget(price);
+        cardLayout->addWidget(length);
+        cardLayout->addWidget(description);
+        
+        QPushButton *editButton = new QPushButton("Edit Trip");
+        cardLayout->addWidget(editButton);
+
+        connect(editButton, &QPushButton::clicked, this, [this, trip]() {
+            openEditForm(trip);
+        });
+
+        listLayout->addWidget(card);
+    }
+
+    //create a scroll area to allow the user to scroll through the trips
+    QScrollArea *scrollArea = new QScrollArea;
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setWidget(listContainer);
+
+    //clear prev. scroll area if not null
+    QLayout *dashboardLayout = tripListingPage->layout();
+    
+    //adjust the index based on how many items are showing
+    if (dashboardLayout->count() > 3) { 
+        QLayoutItem *existingItem = dashboardLayout->takeAt(3);
+        if (existingItem != nullptr) {
+            if(existingItem->widget() != nullptr) {
+                existingItem->widget()->deleteLater();
+            }
+            delete existingItem;
+        }
+    }
+
+    //new scroll area with cards
+    dashboardLayout->addWidget(scrollArea);
+}
+
+void MainWindow::applyPriceFilter() {
+    double minPrice = minPriceField->text().isEmpty() ? 0.0 : minPriceField->text().toDouble();
+    double maxPrice = maxPriceField->text().isEmpty() ? 99999.9 : maxPriceField->text().toDouble();
+
+    QList<QJsonObject> filteredTrips = tripTree.filterByPrice(minPrice, maxPrice);
+
+    //render only the filtered cards
+    renderTripCards(filteredTrips);
 }

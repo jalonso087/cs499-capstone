@@ -139,10 +139,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "Full path to the compiler used for language <LANG>. Set by CMake during compiler detection on the first configure; users may override on the command line to select a specific toolchain."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "C:/Qt/Tools/mingw1310_64/bin/g++.exe"
 		},
 		{
@@ -1555,7 +1555,7 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "The CMake toolchain file"
+					"value" : "Path to a CMake toolchain file, read early in the CMake run, that specifies the compilers, toolchain utilities, and target-platform information used when cross-compiling."
 				}
 			],
 			"type" : "FILEPATH",

@@ -8,6 +8,7 @@
 #include <QPushButton>
 #include <QTextEdit>
 #include <QLabel>
+#include "bst.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -28,10 +29,12 @@ private slots:
     void submitNewTrip();
     void logout();
     void openEditForm(const QJsonObject &tripData);
+    void applyPriceFilter();
 
 // Create pointers for network manager, fetch button, and log console to handle network requests and display logs
 private:
     QNetworkAccessManager *networkManager;
+    TripBST tripTree;
 
     //UI components for nav
     QVBoxLayout *listingLayout;
@@ -56,6 +59,10 @@ private:
     QString authToken;
     QPushButton *logoutButton;
     QString currentEditTripCode;
+    QLineEdit *minPriceField;
+    QLineEdit *maxPriceField;
+    QPushButton *filterButton;
     void submitLogin();
     void loadTripImage(const QString& imageName, QLabel* imageLabel);
+    void renderTripCards (const QList<QJsonObject>& trips);
 };

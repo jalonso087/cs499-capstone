@@ -25,8 +25,10 @@ CMAKE_AR:FILEPATH=C:/Qt/Tools/mingw1310_64/bin/ar.exe
 // MinSizeRel; custom build types may also be defined.
 CMAKE_BUILD_TYPE:STRING=Debug
 
-//CXX compiler
-CMAKE_CXX_COMPILER:STRING=C:/Qt/Tools/mingw1310_64/bin/g++.exe
+//Full path to the compiler used for language <LANG>. Set by CMake
+// during compiler detection on the first configure; users may
+// override on the command line to select a specific toolchain.
+CMAKE_CXX_COMPILER:FILEPATH=C:/Qt/Tools/mingw1310_64/bin/g++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -294,7 +296,9 @@ CMAKE_STRIP:FILEPATH=C:/Qt/Tools/mingw1310_64/bin/strip.exe
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//The CMake toolchain file
+//Path to a CMake toolchain file, read early in the CMake run,
+// that specifies the compilers, toolchain utilities, and target-platform
+// information used when cross-compiling.
 CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6/qt.toolchain.cmake
 
 //If this value is on, makefiles will be generated without the

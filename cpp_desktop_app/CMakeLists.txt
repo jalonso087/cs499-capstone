@@ -14,6 +14,8 @@ add_executable(TravlrAdmin
     main.cpp
     mainwindow.cpp
     mainwindow.h 
+    bst.cpp
+    bst.h
 )
 
 target_link_libraries(TravlrAdmin PRIVATE Qt6::Widgets Qt6::Network)
