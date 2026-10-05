@@ -448,7 +448,7 @@ C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/mainwindow.h
  mdp:C:/Users/DLX_A/Documents/vscodeprojects/travlr/build/TravlrAdmin_autogen/moc_predefs.h
  mdp:C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/bst.h
  mdp:C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/mainwindow.h
-C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/main.cpp
 C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/mainwindow.cpp
+C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/main.cpp
 C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/bst.h
 C:/Users/DLX_A/Documents/vscodeprojects/travlr/cpp_desktop_app/bst.cpp

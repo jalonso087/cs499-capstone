@@ -18,7 +18,22 @@ const register = async(req, res) => {
         });
     
     user.setPassword(req.body.password) //Set user password
-    const q = await user.save();
+
+    try {
+        const q = await user.save();
+
+        if(!q) {
+            //no data returned from database
+            return res.status(400).json({ message: "Database returned no data." });
+        } else {
+            //return new user token
+            const token = user.generateJWT();
+            return res.status(200).json({token});
+        }
+    } catch (err) {
+        return res.status(400.).json(err);
+    }
+    //const q = await user.save();
 
     if(!q)
     {
